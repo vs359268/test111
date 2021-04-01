@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sunhao.test.mapper.StudentMapper">
+    <select id="findAll" resultType="Student">
+        SELECT student_Id as studentId,student_name AS studentName, school_Id as schoolId FROM student
+    </select>
+    <select id="findStudent" resultType="Student">
+        SELECT student_Id as studentId,student_name AS studentName, school_Id as schoolId FROM student
+        where student_Id=#{id}
+    </select>
+    <insert id="addStudent">
+        insert into student
+        (student_Id,student_name,school_Id)
+        values
+        (#{studentId},#{studentName},#{schoolId})
+    </insert>
+</mapper>
