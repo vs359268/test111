@@ -31,4 +31,9 @@ public class TeacherController {
         System.out.println(teacher);
         return teacher;
     }
+
+    @PostMapping("updateTeacher")
+    public void update(@RequestBody Teacher teacher){
+        teacherService.save(teacher);
+    }
 }
