@@ -34,12 +34,11 @@ public class TeacherController {
         return teacher;
     }
 
-    public static void main(String[] args) {
-        System.out.println(" I am master");
-    }
-
     @PostMapping("updateTeacher")
     public void update(@RequestBody Teacher teacher){
         teacherService.save(teacher);
+    }
+    public static void main(String[] args) {
+        System.out.println(" I am dev");
     }
 }
